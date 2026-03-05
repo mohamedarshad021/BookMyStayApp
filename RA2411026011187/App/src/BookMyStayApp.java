@@ -15,28 +15,19 @@ public class BookMyStayApp {
         addRoom("101");
         addRoom("102");
 
-        System.out.println("\nAvailable Rooms:");
-        for(String room : rooms){
-            System.out.println("Room No: " + room);
-        }
+        viewRooms();
 
         // UC3 Logic
         System.out.println("\nBooking Room 101...");
         bookRoom("101");
 
-        System.out.println("\nRooms after booking:");
-        for(String room : rooms){
-            System.out.println("Room No: " + room);
-        }
+        viewRooms();
 
         // UC4 Logic
         System.out.println("\nCancelling booking for Room 101...");
         cancelBooking("101");
 
-        System.out.println("\nRooms after cancellation:");
-        for(String room : rooms){
-            System.out.println("Room No: " + room);
-        }
+        viewRooms();
     }
 
     public static void addRoom(String roomNo){
@@ -55,5 +46,13 @@ public class BookMyStayApp {
     public static void cancelBooking(String roomNo){
         rooms.add(roomNo);
         System.out.println("Booking for room " + roomNo + " cancelled.");
+    }
+
+    // UC5 Logic
+    public static void viewRooms(){
+        System.out.println("\nAvailable Rooms:");
+        for(String room : rooms){
+            System.out.println("Room No: " + room);
+        }
     }
 }
