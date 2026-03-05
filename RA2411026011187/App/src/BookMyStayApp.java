@@ -28,6 +28,15 @@ public class BookMyStayApp {
         for(String room : rooms){
             System.out.println("Room No: " + room);
         }
+
+        // UC4 Logic
+        System.out.println("\nCancelling booking for Room 101...");
+        cancelBooking("101");
+
+        System.out.println("\nRooms after cancellation:");
+        for(String room : rooms){
+            System.out.println("Room No: " + room);
+        }
     }
 
     public static void addRoom(String roomNo){
@@ -41,5 +50,10 @@ public class BookMyStayApp {
         } else {
             System.out.println("Room not available.");
         }
+    }
+
+    public static void cancelBooking(String roomNo){
+        rooms.add(roomNo);
+        System.out.println("Booking for room " + roomNo + " cancelled.");
     }
 }
