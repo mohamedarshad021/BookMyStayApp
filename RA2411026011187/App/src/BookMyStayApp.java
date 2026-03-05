@@ -16,7 +16,15 @@ public class BookMyStayApp {
         addRoom("102");
 
         System.out.println("\nAvailable Rooms:");
+        for(String room : rooms){
+            System.out.println("Room No: " + room);
+        }
 
+        // UC3 Logic
+        System.out.println("\nBooking Room 101...");
+        bookRoom("101");
+
+        System.out.println("\nRooms after booking:");
         for(String room : rooms){
             System.out.println("Room No: " + room);
         }
@@ -24,5 +32,14 @@ public class BookMyStayApp {
 
     public static void addRoom(String roomNo){
         rooms.add(roomNo);
+    }
+
+    public static void bookRoom(String roomNo){
+        if(rooms.contains(roomNo)){
+            rooms.remove(roomNo);
+            System.out.println("Room " + roomNo + " booked successfully!");
+        } else {
+            System.out.println("Room not available.");
+        }
     }
 }
